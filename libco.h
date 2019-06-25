@@ -1,20 +1,11 @@
 /*
-  libco
-  version: 0.17 (2015-06-18)
+  libco v18.02 (2017-11-06)
   author: byuu
-  license: public domain
+  license: ISC
 */
 
 #ifndef LIBCO_H
 #define LIBCO_H
-
-#ifdef LIBCO_C
-  #ifdef LIBCO_MP
-    #define thread_local __thread
-  #else
-    #define thread_local
-  #endif
-#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,7 +13,7 @@ extern "C" {
 
 typedef void* cothread_t;
 
-cothread_t co_active(void);
+cothread_t co_active();
 cothread_t co_create(unsigned int, void (*)(void));
 void co_delete(cothread_t);
 void co_switch(cothread_t);
