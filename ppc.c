@@ -1,6 +1,5 @@
 #define LIBCO_C
 #include "libco.h"
-#include "settings.h"
 
 #include <stdlib.h>
 #include <stdint.h>

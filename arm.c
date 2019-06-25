@@ -1,6 +1,5 @@
 #define LIBCO_C
 #include "libco.h"
-#include "settings.h"
 
 #include <assert.h>
 #include <stdlib.h>
@@ -50,7 +49,7 @@ cothread_t co_create(unsigned int size, void (*entrypoint)(void)) {
   size += 256;
   size &= ~15;
 
-  if(handle = (unsigned long*)malloc(size)) {
+  if((handle = (unsigned long*)malloc(size))) {
     unsigned long* p = (unsigned long*)((unsigned char*)handle + size);
     handle[8] = (unsigned long)p;
     handle[9] = (unsigned long)entrypoint;

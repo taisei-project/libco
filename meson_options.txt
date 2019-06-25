@@ -1,0 +1,14 @@
+
+option(
+    'mprotect',
+    type : 'boolean',
+    value : false,
+    description : 'Make co_swap_function executable via mprotect instead of putting it in the text section [amd64, arm, ppc, x86]'
+)
+
+option(
+    'impl',
+    type : 'combo',
+    choices : ['auto', 'amd64', 'arm', 'fiber', 'pcc', 'sjlj', 'ucontext', 'x86'],
+    description : 'Which implementation to use'
+)
