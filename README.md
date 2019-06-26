@@ -4,7 +4,7 @@ Mirror of http://byuu.org/library/libco/
 
 
 **License:**
-libco is released to the public domain.
+libco is released under the ISC license.
 
 ------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ I am interested in knowing of any projects that make use of this library, though
 ------------------------------------------------------------------------
 
 **Foreword:**
-libco is a cross-platform, public domain implementation of cooperative-multithreading; a feature that is sorely lacking from the ISO C/C++ standard.
+libco is a cross-platform implementation of cooperative-multithreading; a feature that is sorely lacking from the ISO C/C++ standard.
 The library is designed for maximum speed and portability, and not for safety or features. If safety or extra functionality is desired, a wrapper API can easily be written to encapsulate all library functions.
 Behavior of executing operations that are listed as not permitted below result in undefined behavior. They may work anyway, they may cause undesired / unknown behavior, or they may crash the program entirely.
 The goal of this library was to simplify the base API as much as possible, implementing only that which cannot be implemented using pure C. Additional functionality after this would only complicate ports of this library to new platforms.
@@ -23,14 +23,14 @@ The goal of this library was to simplify the base API as much as possible, imple
 ------------------------------------------------------------------------
 
 **Porting:**
-This document is included as a reference for porting libco. Please submit any ports you create to me, so that libco can become more useful. Please note that since libco is public domain, you must submit your code as a work of the public domain in order for it to be included in the official distribution. Full credit will be given in the source code of the official release. Please do not bother submitting code to me under any other license – including GPL, LGPL, BSD or CC – I am not interested in creating a library with multiple different licenses depending on which targets are used.
+This document is included as a reference for porting libco. Please submit any ports you create to me, so that libco can become more useful.
 
 ------------------------------------------------------------------------
 
 **Synopsis:**
 ```c
 typedef void* cothread_t;
-cothread_t co_active();
+cothread_t co_active(void);
 cothread_t co_create(unsigned int heapsize, void (*coentry)(void));
 void co_delete(cothread_t cothread);
 void co_switch(cothread_t cothread);
