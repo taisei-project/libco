@@ -1,0 +1,5 @@
+*.o
+*.obj
+*.exe
+test_timing
+test_args
